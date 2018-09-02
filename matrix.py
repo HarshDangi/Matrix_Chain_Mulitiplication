@@ -1,4 +1,6 @@
 def cost(i,j,arr,m,s):
+    if(i==j):
+        return 0
     o_cost=99999999
     f_k=i
     for k in range(i,j):
@@ -10,33 +12,16 @@ def cost(i,j,arr,m,s):
     s[i][j]=f_k+1
     return o_cost
 
-arr=[30,35,15,5,10,20,25]
-m=[[0 for i in range(6)] for j in range(6)]
-s=[[0 for i in range(6)] for j in range(5)]
+arr=input("Enter the Dimensions : ").split()
+arr=[int(x) for x in arr]
+size=len(arr)-1
+m=[[0 for i in range(size)] for j in range(size)]
+s=[[0 for i in range(size)] for j in range(size-1)]
 
-for i in range(0,6):
-    j=i
-    m[i][j]=0
+for l in range(size):
+    for i in range(size-l):
+        j=i+l
+        m[i][j]=cost(i,j,arr,m,s)
 
-for i in range(0,5):
-    j=i+1
-    m[i][j]=cost(i,j,arr,m,s)
-
-for i in range(0,4):
-    j=i+2
-    m[i][j]=cost(i,j,arr,m,s)
-
-for i in range(0,3):
-    j=i+3
-    m[i][j]=cost(i,j,arr,m,s)
-
-for i in range(0,2):
-    j=i+4
-    m[i][j]=cost(i,j,arr,m,s)
-
-for i in range(0,1):
-    j=i+5
-    m[i][j]=cost(i,j,arr,m,s)
-
-print(m)
-print(s)
+print("M matrix is : \n",m)
+print("S matrix is : \n",s)
