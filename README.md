@@ -10,5 +10,3 @@ This formula have been adjusted accordingly as arrays start from 0
 the cost are stored in 'm' matrix and k values are stored in 's' matrix
 
 For now I've took the case for six matrices and later on I will adapt the code for any number.
-
-Added the code for any number of matrices
