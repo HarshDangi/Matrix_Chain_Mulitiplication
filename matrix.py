@@ -13,7 +13,7 @@ def cost(i,j,arr,m,s):
     return o_cost
 
 arr=[30,35,15,5,10,20,25]
-size=len(arr-1)
+size=len(arr)
 m=[[0 for i in range(size)] for j in range(size)]
 s=[[0 for i in range(size)] for j in range(size-1)]
     
